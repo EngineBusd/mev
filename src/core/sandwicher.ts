@@ -320,7 +320,7 @@ class Sandwicher {
         Math.max(
           parseFloat(
             utils.formatUnits(targetGasPriceInWei || BigNumber.from(0), 'gwei')
-          ) + config.GAS_FACTOR,
+          ) * config.GAS_FACTOR,
           7
         ).toString(),
         'gwei'

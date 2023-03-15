@@ -320,7 +320,7 @@ class Sandwicher {
         Math.max(
           parseFloat(
             utils.formatUnits(targetGasPriceInWei || BigNumber.from(0), 'gwei')
-          ) * config.GAS_FACTOR,
+          ) + config.GAS_FACTOR,
           7
         ).toString(),
         'gwei'
@@ -722,14 +722,14 @@ class Sandwicher {
     try {
       let buyData = utils.defaultAbiCoder.encode(
         ['address', 'uint256', 'uint256', 'address[]'],
-        [router, amountIn, amountOutMin, path]
+        [router, amountIn, 0, path]
       );
 
       let sell_path = [...params.path].reverse();
 
       let sellData = utils.defaultAbiCoder.encode(
         ['address', 'address[]', 'uint256'],
-        [router, sell_path, sellAmountOutMin]
+        [router, sell_path, 0]
       );
 
       return {

@@ -722,7 +722,7 @@ class Sandwicher {
     try {
       let buyData = utils.defaultAbiCoder.encode(
         ['address', 'uint256', 'uint256', 'address[]'],
-        [router, amountIn, 0, path]
+        [router, amountIn, amountOutMin, path]
       );
 
       let sell_path = [...params.path].reverse();

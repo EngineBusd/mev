@@ -92,5 +92,5 @@ export const config = {
    * @type MIN_PROFIT_THRESHOLD is the minimum profit threshold that we allow
    * @type {number}
    */
-  MIN_PROFIT_THRESHOLD: parseFloat(process.env.MIN_PROFIT_THRESHOLD || '0.003'),
+  MIN_PROFIT_THRESHOLD: parseFloat(process.env.MIN_PROFIT_THRESHOLD || '0.002'),
 };
